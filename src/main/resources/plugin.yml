@@ -1,0 +1,29 @@
+name: BadVelocity
+version: '${project.version}'
+main: me.yourbadandimbest.badvelocity.Main
+author: yourbadandimbest
+api-version: 1.19
+commands:
+  velocity:
+    description: Modify player velocity.
+    usage: /<command> <x> <y> <z> [player]
+    permission: bad.velocity
+  fart:
+    description: Launch player into the air.
+    usage: /<command> [player]
+    permission: bad.fart
+
+permissions:
+  bad.*:
+    default: op
+    description: Give players with op everything by default
+  bad.velocity.*:
+    default: op
+    children:
+      bad.velocity: true
+      bad.velocity.others: true
+  bad.fart.*:
+    default: op
+    children:
+      bad.fart: true
+      bad.fart.others: true
